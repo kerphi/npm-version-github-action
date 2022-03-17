@@ -1,0 +1,23 @@
+       
+name: 'Bump Version 2'
+
+on: 
+  workflow_dispatch:
+    inputs:
+      releaseVersion:
+        description: 'Version de la release'     
+        required: true
+        default: 'x.x.x'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v2'
+
+      - name: 'Patch README with the new version'
+        env:
+          NEW_TAG: "1.0.0"
+        run: sed -i "s#[0-9]\.[0-9]\.[0-9]#$NEW_TAG#g" README.md && cat README.md && git commit -m "version" README.md && git push
