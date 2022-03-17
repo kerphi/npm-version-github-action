@@ -20,8 +20,10 @@ jobs:
       - name: 'Patch README with the new version'
         env:
           NEW_TAG: "1.0.0"
-        run: git config --global user.email "you@example.com" && \
-          git config --global user.name "Your Name" && \
-          sed -i "s#[0-9]\.[0-9]\.[0-9]#$NEW_TAG#g" README.md &&\
-          cat README.md &&\
-          git commit -m "version" README.md && git push
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          sed -i "s#[0-9]\.[0-9]\.[0-9]#$NEW_TAG#g" README.md
+          cat README.md
+          git commit -m "version" README.md
+          git push
