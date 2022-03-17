@@ -29,7 +29,7 @@ jobs:
       - name: 'Patch README'
         env:
           NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
-        run: sed -i "s#1.1.2#$NEW_TAG#g" README.md && cat README.md
+        run: sed -i "s#1.1.2#$NEW_TAG#g" README.md && cat README.md && git commit -m "version" README.md
       - name: 'Output Step'
         env:
           NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
