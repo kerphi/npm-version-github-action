@@ -4,7 +4,7 @@
   "description": "Test des github action avec npm version",
   "main": "index.js",
   "scripts": {
-    "version": "echo 'XXXXXXXXXXXXXXXXXXXXX'"
+    "version": "sed -i 's#Version#VVersion#g' README.md"
   },
   "repository": {
     "type": "git",
