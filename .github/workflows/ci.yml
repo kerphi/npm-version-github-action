@@ -1,0 +1,12 @@
+name: 'CI build-test-push'
+
+on: tags
+
+jobs:
+  build-test-push:
+    name: 'Build Test Push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v2'
