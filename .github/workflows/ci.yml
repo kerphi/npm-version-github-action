@@ -1,6 +1,6 @@
 name: 'CI build-test-push'
 
-on: [push, tags, pull_request, release]
+on: [push, pull_request, release]
 
 jobs:
   build-test-push:
