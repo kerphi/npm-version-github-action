@@ -19,7 +19,7 @@ jobs:
 
       - name: 'Patch README with the new version'
         env:
-          NEW_TAG: ${{ github.event.inputs.logLevel }}
+          NEW_TAG: ${{ github.event.inputs.releaseVersion }}
         run: |
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
