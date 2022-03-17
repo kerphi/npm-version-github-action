@@ -1,7 +1,13 @@
 name: 'CI build-test-push'
 
-on: [push, pull_request, release]
-
+#on: [push, pull_request, release]
+on:
+  workflow_run:
+    workflows: ["Bump Version"]
+    branches: [main]
+    types: 
+      - completed
+      
 jobs:
   build-test-push:
     name: 'Build Test Push'
