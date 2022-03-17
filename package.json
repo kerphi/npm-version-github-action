@@ -1,0 +1,19 @@
+{
+  "name": "npm-version-github-action",
+  "version": "1.0.0",
+  "description": "Test des github action avec npm version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kerphi/npm-version-github-action.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kerphi/npm-version-github-action/issues"
+  },
+  "homepage": "https://github.com/kerphi/npm-version-github-action#readme"
+}
