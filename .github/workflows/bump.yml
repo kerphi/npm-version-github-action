@@ -26,6 +26,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'cat package.json'
         run: cat ./package.json
+      - name: 'Patch README'
+        env:
+          NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+        run: sed -i "s#1.1.2#$NEW_TAG#g" README.md && cat README.md
       - name: 'Output Step'
         env:
           NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
