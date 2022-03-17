@@ -4,3 +4,4 @@ Test de l'utilisation de npm version avec les github action pour faire des relea
 Version de l'appli: 1.1.2
 
 .
+.
