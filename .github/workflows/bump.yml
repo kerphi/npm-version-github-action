@@ -1,9 +1,10 @@
 name: 'Bump Version'
 
-on:
-  push:
-    branches:
-      - 'main'
+# on commente pour désactiver ce workflow
+#on:
+#  push:
+#    branches:
+#      - 'main'
 
 jobs:
   bump-version:
