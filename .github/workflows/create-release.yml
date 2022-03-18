@@ -23,17 +23,9 @@ jobs:
         env:
           NEW_TAG:  ${{ github.event.inputs.releaseVersion }}
         run: |
-          ls -ail
-          git pull
-          git ls-remote --tags
-          git tag --list > /tmp/ttt
-          cat /tmp/ttt
-          echo $NEW_TAG
-          git ls-remote --tags | grep $NEW_TAG
-          
-#          git tag | grep $NEW_TAG
-#          echo $?
-#          test $(git tag | grep $NEW_TAG)
+          git tag --list | grep $NEW_TAG
+          echo $?
+          test $(git tag --list | grep $NEW_TAG)
         
       - name: 'Generate the new version (patch few files + git tag)'
         env:
