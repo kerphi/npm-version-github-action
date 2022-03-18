@@ -9,7 +9,7 @@ A noter qu'on peut chaîner les workflow pour par exemple enchainer avec un buil
 
 ---
 
-Version: 1.3.0
+Version: 1.3.1
 
 
 
