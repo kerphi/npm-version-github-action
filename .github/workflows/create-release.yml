@@ -22,13 +22,14 @@ jobs:
           NEW_TAG:  ${{ github.event.inputs.releaseVersion }}
         run: test $(git tag | grep $NEW_TAG) && exit 1
         
-      - name: 'Patch README with the new version'
+      - name: 'Generate the new version (patch few files + git tag)'
         env:
           NEW_TAG: ${{ github.event.inputs.releaseVersion }}
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
-          sed -i "s#[0-9]\.[0-9]\.[0-9]#$NEW_TAG#g" README.md
-          git commit -m "version" README.md
+          git config --global user.email "github-action@noreply"
+          git config --global user.name "Github Action"
+          npm version $NEW_TAG
+          sed -i "s#Version: [0-9]\.[0-9]\.[0-9]#Version: $NEW_TAG#g" README.md
+          git commit -m "version" README.md package.json
           git tag $NEW_TAG
           git push && git push --tags
