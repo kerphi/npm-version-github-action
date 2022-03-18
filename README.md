@@ -9,7 +9,7 @@ A noter qu'on peut chaîner les workflow pour par exemple enchainer avec un buil
 
 ---
 
-Test pour patch du README avec la version de l'appli: 1.3.0
+Version: 1.3.0
 
 
 
