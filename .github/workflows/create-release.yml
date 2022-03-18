@@ -23,7 +23,9 @@ jobs:
         run: |
           ls -ail
           git pull
-          git tag --list | grep $NEW_TAG
+          git ls-remote --tags
+          git tag --list
+          echo $NEW_TAG
           
 #          git tag | grep $NEW_TAG
 #          echo $?
