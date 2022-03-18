@@ -21,7 +21,8 @@ jobs:
         env:
           NEW_TAG:  ${{ github.event.inputs.releaseVersion }}
         run: |
-          git tag
+          git tag --list | grep $NEW_TAG
+          
 #          git tag | grep $NEW_TAG
 #          echo $?
 #          test $(git tag | grep $NEW_TAG)
