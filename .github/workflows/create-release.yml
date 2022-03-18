@@ -21,6 +21,7 @@ jobs:
           # todo: ajouter un personnal token pour que les git push que l'on fait depuis ce workflow puissent 
           # etre des event pour les autres workflow de build
           # https://stackoverflow.com/questions/67550727/push-event-doesnt-trigger-workflow-on-push-paths-github-actions
+          token: ${{ secrets.TOKEN_FOR_GITHUB_ACTION }}
    
       - name: 'Verify version is semver formatted (X.X.X)'
         env:
