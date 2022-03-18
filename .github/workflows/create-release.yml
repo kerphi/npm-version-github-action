@@ -17,6 +17,11 @@ jobs:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v2'
 
+      - name: 'Verify version is not already used as a git tag'
+        env:
+          NEW_TAG:  ${{ github.event.inputs.releaseVersion }}
+        run: test $(git tag | grep $NEW_TAG) && >&2 echo "$NEW_TAG is already a git tag, choose another one." && exit 1
+        
       - name: 'Patch README with the new version'
         env:
           NEW_TAG: ${{ github.event.inputs.releaseVersion }}
