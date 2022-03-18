@@ -23,9 +23,7 @@ jobs:
         env:
           NEW_TAG:  ${{ github.event.inputs.releaseVersion }}
         run: |
-          git tag --list | grep $NEW_TAG
-          echo $?
-          test $(git tag --list | grep $NEW_TAG)
+          test $(git tag --list | grep $NEW_TAG) && exit 1
         
       - name: 'Generate the new version (patch few files + git tag)'
         env:
