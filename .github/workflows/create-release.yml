@@ -47,9 +47,7 @@ jobs:
 
       - name: 'Create the github release'
         uses: softprops/action-gh-release@v1
-        env:
-          NEW_TAG: ${{ github.event.inputs.releaseVersion }}
         with:
-          tag_name: $NEW_TAG
+          tag_name: ${{ github.event.inputs.releaseVersion }}
           generate_release_notes: true
 
