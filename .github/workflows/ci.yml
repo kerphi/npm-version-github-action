@@ -4,11 +4,11 @@ on:
   push:
   pull_request:
   release:
-  workflow_run:
-    workflows: ["Bump Version"]
-    branches: [main]
-    types: 
-      - completed
+#  workflow_run:
+#    workflows: ["Bump Version"]
+#    branches: [main]
+#    types: 
+#      - completed
       
 jobs:
   build-test-push:
