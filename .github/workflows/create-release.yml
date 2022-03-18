@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       releaseVersion:
-        description: 'Version de la release'     
+        description: 'Version de la release (semver)'
         required: true
         default: 'x.x.x'
 
