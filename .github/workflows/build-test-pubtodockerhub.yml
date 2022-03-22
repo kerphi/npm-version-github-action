@@ -2,6 +2,9 @@ name: "build-test-pubtodockerhub"
 
 on: [push, pull_request]
 
+env:
+  DOCKERHUB_IMAGE_PREFIX: kerphi/npm-version-github-action
+
 jobs:
   build-test-pubtodockerhub:
     runs-on: ubuntu-latest
@@ -19,7 +22,7 @@ jobs:
         id: docker_tag_meta
         uses: docker/metadata-action@v3
         with:
-          images: abesesr/abes-hello
+          images: ${{ env.DOCKERHUB_IMAGE_PREFIX }}
       - name: "Push: login to DockerHub"
         if: github.event_name != 'pull_request'
         run: |
