@@ -34,5 +34,5 @@ jobs:
           for DOCKER_TAG in $DOCKER_TAGS
           do
             docker build . --target front-image -t ${DOCKER_TAG}-front
-            docker push ${DOCKER_TAG}-front
+            docker push ${DOCKER_TAG}
           done
