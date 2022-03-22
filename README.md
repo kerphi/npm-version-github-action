@@ -7,6 +7,7 @@ Le workflow suivant https://github.com/kerphi/npm-version-github-action/blob/mai
 
 A noter qu'on peut chaîner les workflow pour par exemple enchainer avec un build-test-push une fois qu'une nouvelle release a été créée. cf https://github.com/kerphi/npm-version-github-action/blob/main/.github/workflows/ci.yml#L3-L11 Ceci peut être cumulé avec un evenement de type push classique sans release ce qui permet de builder une version sans numéro de version et au moment ou on génère une version de builder également.
 
+
 ---
 
 Version: 1.3.3
