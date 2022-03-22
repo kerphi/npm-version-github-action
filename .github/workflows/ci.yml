@@ -1,5 +1,8 @@
 name: 'Build Test Push'
 
+env:
+  DOCKERHUB_IMAGE_PREFIX: kerphi/npm-version-github-action
+
 on:
   push:
   pull_request:
@@ -20,3 +23,5 @@ jobs:
         uses: 'actions/checkout@v2'
       - name: 'cat package.json'
         run: cat ./package.json
+      - name: 'Echo env param'
+        run: echo "Hello ${DOCKERHUB_IMAGE_PREFIX}"
